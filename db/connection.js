@@ -5,7 +5,7 @@ const mongoose = require("mongoose")
 // IMPORT MERCED LOGGER FOR COLORFUL LOGS
 const {log} = require("mercedlogger")
 // Bring in our database string from .env or default string
-const MONGODB_URI = process.env.MONGODBURI || "mongodb://localhost:27017/defaultdb"
+const MONGODB_URL = process.env.MONGODB_URL || "mongodb://localhost:27017/defaultdb"
 
 ///////////////////////////////////
 // Mongoose Configuration Object to Avoid Warnings
@@ -15,7 +15,7 @@ const config = {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:
 ///////////////////////////////////
 // Making the Database Connection
 ///////////////////////////////////
-mongoose.connect(MONGODB_URI, config)
+mongoose.connect(MONGODB_URL, config)
 
 ///////////////////////////////////
 // Handling Connection Events
